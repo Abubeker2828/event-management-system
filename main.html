@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Main - Event Planning Management System</title>
+    <style>
+      /* Global Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background: url("background_main.jpg") no-repeat center center/cover;
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+      }
+
+      header {
+        background-color: rgb(20, 201, 20);
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .content {
+        display: flex;
+        flex: 1;
+      }
+
+      nav {
+        background-color: #f4f4f4;
+        width: 220px;
+        padding: 20px;
+        border-right: 1px solid #ddd;
+      }
+
+      nav a {
+        display: block;
+        color: rgb(20, 201, 20);
+        text-decoration: none;
+        margin: 15px 0;
+        font-weight: bold;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: rgb(20, 201, 20);
+      }
+
+      .main-section {
+        flex: 1;
+        padding: 30px;
+        background: rgba(255, 255, 255, 0.9);
+        margin: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .section {
+        display: none;
+      }
+
+      .section.active {
+        display: block;
+      }
+
+      footer {
+        background-color: rgb(20, 201, 20);
+        color: #fff;
+        text-align: center;
+        padding: 15px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Student Union Event Planning Management System</h1>
+    </header>
+
+    <div class="content">
+      <nav>
+        <a href="register.html" onclick="showSection('registrationSection')"
+          >Registration</a
+        >
+        <a href="info.html" onclick="showSection('infoSection')">Info</a>
+        <a href="event.html" onclick="showSection('eventsSection')">Events</a>
+      </nav>
+
+      <div class="main-section">
+        <div id="registrationSection" class="section active">
+          <h2>Registration</h2>
+          <p>
+            Welcome to the event registration page. Here, you can sign up for
+            upcoming events organized by the Student Union. Our streamlined
+            registration process ensures that you can quickly and easily
+            register for any event.
+          </p>
+          <p>
+            Please fill in the required details and submit your registration. We
+            work hard to make every event accessible and enjoyable for all
+            students.
+          </p>
+        </div>
+
+        <div id="infoSection" class="section">
+          <h2>Info</h2>
+          <p>
+            Event planning management systems are essential tools for organizing
+            and executing events efficiently. They centralize the planning
+            process by allowing event organizers to manage registrations,
+            schedule sessions, and communicate updates seamlessly. With a
+            user-friendly interface and powerful management features, these
+            systems reduce administrative burdens and help ensure that every
+            event runs smoothly.
+          </p>
+          <p>
+            By automating routine tasks and providing real-time updates, modern
+            event planning systems empower organizers to focus on creating
+            memorable experiences for participants. They also enable data-driven
+            decision-making by tracking attendee engagement and gathering
+            valuable feedback for future events.
+          </p>
+          <p>
+            In today's fast-paced environment, having a robust event management
+            solution is a competitive advantage. Whether organizing academic
+            conferences, student union events, or community outreach programs,
+            these systems ensure that every detail is addressed—from
+            registration and logistics to post-event analysis.
+          </p>
+        </div>
+
+        <div id="eventsSection" class="section">
+          <h2>Events</h2>
+          <p>
+            This section provides listings and details of upcoming events. Stay
+            informed about the latest updates and announcements regarding all
+            events organized by the Student Union.
+          </p>
+          <p>
+            For now, please check back later for more detailed event information
+            and schedules.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <p>&copy; 2025 Haramaya University Student Union. All rights reserved.</p>
+    </footer>
+
+    <script>
+      function showSection(sectionId) {
+        const sections = document.querySelectorAll(".section");
+        sections.forEach((section) => {
+          section.classList.remove("active");
+        });
+        document.getElementById(sectionId).classList.add("active");
+      }
+    </script>
+  </body>
+</html>

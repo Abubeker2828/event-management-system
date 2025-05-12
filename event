@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Upcoming Events - Student Union Event Management System</title>
+    <style>
+      /* Global Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Arial", sans-serif;
+        background: url("background_event.jpg") no-repeat center center/cover;
+        color: #333;
+        line-height: 1.6;
+        padding: 20px;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      header h1 {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .events-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        margin-bottom: 30px;
+      }
+
+      .event-card {
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s;
+      }
+
+      .event-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .event-card h2 {
+        margin-bottom: 10px;
+        color: #007bff;
+        font-size: 1.8rem;
+      }
+
+      .event-card .event-date {
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #555;
+        display: block;
+      }
+
+      .event-card p {
+        font-size: 1rem;
+        margin-bottom: 10px;
+      }
+
+      footer {
+        text-align: center;
+        padding: 15px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Upcoming Events</h1>
+      <p>Student Union Event Management System</p>
+    </header>
+    <main>
+      <div class="events-container">
+        <div class="event-card">
+          <h2>Welcoming Fresh Students</h2>
+          <span class="event-date">September 1, 2025</span>
+          <p>
+            Kick off the academic year with a warm welcome for new students.
+            Enjoy campus tours, introductory sessions, and a social gathering to
+            meet your peers.
+          </p>
+        </div>
+        <div class="event-card">
+          <h2>Peace Forum</h2>
+          <span class="event-date">October 15, 2025</span>
+          <p>
+            Join us for a thoughtful discussion on fostering peace and unity on
+            campus. Engage with community leaders and contribute to a culture of
+            harmony.
+          </p>
+        </div>
+        <div class="event-card">
+          <h2>Graduation Ceremony</h2>
+          <span class="event-date">June 30, 2025</span>
+          <p>
+            Celebrate the achievements of our graduating students with an
+            inspiring ceremony, marking the culmination of academic success and
+            new beginnings.
+          </p>
+        </div>
+        <div class="event-card">
+          <h2>Culture Day</h2>
+          <span class="event-date">November 10, 2025</span>
+          <p>
+            Experience a vibrant showcase of diverse cultures through music,
+            dance, and cuisine. Celebrate the rich heritage that unites our
+            university community.
+          </p>
+        </div>
+        <div class="event-card">
+          <h2>Orientation</h2>
+          <span class="event-date">August 25, 2025</span>
+          <p>
+            Get acquainted with campus life during our comprehensive orientation
+            program designed to help new students navigate academics,
+            facilities, and social opportunities.
+          </p>
+        </div>
+        <div class="event-card">
+          <h2>Voting for Student Union Leaders</h2>
+          <span class="event-date">December 05, 2025</span>
+          <p>
+            Participate in the democratic process by casting your vote to elect
+            the next Student Union leadership team. Your voice is important in
+            shaping our future.
+          </p>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; 2025 Haramaya University Student Union. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

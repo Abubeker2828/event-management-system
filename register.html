@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Registration</title>
+    <style>
+      /* Global Styles */
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        background: url("One.jpg") no-repeat center center/cover;
+        color: #333;
+      }
+      .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        padding: 20px;
+        background: rgba(0, 0, 0, 0.5);
+      }
+      .form-box {
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        width: 100%;
+        max-width: 700px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        overflow-y: auto;
+        max-height: 90vh;
+      }
+      h1,
+      h2,
+      h3 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #222;
+      }
+      fieldset {
+        border: 1px solid #ccc;
+        margin-bottom: 20px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      legend {
+        font-weight: bold;
+        padding: 0 10px;
+      }
+      .input-group {
+        margin-bottom: 15px;
+        display: flex;
+        flex-direction: column;
+      }
+      .input-group label {
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      .input-group input,
+      .input-group select,
+      .input-group button {
+        padding: 8px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 1rem;
+      }
+      .input-group input:focus,
+      .input-group select:focus {
+        outline: none;
+        border-color: rgb(20, 201, 20);
+      }
+      .radio-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+      }
+      .radio-group input {
+        margin-right: 5px;
+      }
+      .logo {
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .logo img {
+        max-width: 150px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+      }
+      .submit-group {
+        text-align: center;
+      }
+      .submit-group button {
+        background-color: rgb(61, 117, 61);
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        font-size: 1rem;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+      }
+      .submit-group button:hover {
+        background-color: #ff704d;
+      }
+      a {
+        text-decoration: none;
+        font-size: 0.9rem;
+        color: rgb(20, 201, 20);
+      }
+      a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="form-box">
+        <h1>Student Registration</h1>
+        <form
+          id="registrationForm"
+          action="report.html"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+          <!-- Student Information -->
+          <fieldset>
+            <legend>Student Information</legend>
+            <div class="logo">
+              <img src="haremayalogo.jpg" alt="Haramaya University Logo" />
+              <p>Haramaya University Student Union</p>
+            </div>
+            <div class="input-group">
+              <label for="studentFirstName">First Name</label>
+              <input
+                type="text"
+                id="studentFirstName"
+                name="studentFirstName"
+                placeholder="Enter First Name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="studentMiddleName">Middle Name</label>
+              <input
+                type="text"
+                id="studentMiddleName"
+                name="studentMiddleName"
+                placeholder="Enter Middle Name"
+              />
+            </div>
+            <div class="input-group">
+              <label for="studentLastName">Last Name</label>
+              <input
+                type="text"
+                id="studentLastName"
+                name="studentLastName"
+                placeholder="Enter Last Name"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="birthDate">Birth Date</label>
+              <input type="date" id="birthDate" name="birthDate" required />
+            </div>
+            <div class="input-group">
+              <label for="studentAddress">Address</label>
+              <input
+                type="text"
+                id="studentAddress"
+                name="studentAddress"
+                placeholder="Enter Your Address"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="studentPhoto">Upload Photo</label>
+              <input
+                type="file"
+                id="studentPhoto"
+                name="studentPhoto"
+                accept="image/*"
+                onchange="previewImage(event, 'studentPreview')"
+              />
+              <img
+                id="studentPreview"
+                src=""
+                alt="Student Photo Preview"
+                style="max-width: 120px; margin-top: 10px"
+              />
+            </div>
+            <div class="input-group radio-group">
+              <span>Gender:</span>
+              <label
+                ><input type="radio" name="gender" value="male" required />
+                Male</label
+              >
+              <label
+                ><input type="radio" name="gender" value="female" required />
+                Female</label
+              >
+              <label
+                ><input type="radio" name="gender" value="non" required />
+                Non-binary</label
+              >
+            </div>
+          </fieldset>
+
+          <!-- Contact Information -->
+          <fieldset>
+            <legend>Contact Information</legend>
+            <div class="input-group">
+              <label for="phone">Phone Number</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Enter phone number"
+                required
+              />
+            </div>
+            <div class="input-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter email address"
+                required
+              />
+            </div>
+          </fieldset>
+
+          <!-- Club, Region & Department -->
+          <fieldset>
+            <legend>Club & Department</legend>
+            <div class="input-group">
+              <label for="club">Club to Join</label>
+              <select id="club" name="club" required>
+                <option value="">-- Select Club --</option>
+                <option value="english">English Club</option>
+                <option value="art">Art Club</option>
+                <option value="disability">Disability Club</option>
+                <option value="antiCorruption">Anti-Corruption Club</option>
+                <option value="leadership">Leadership Club</option>
+                <option value="peaceForm">Peace Form</option>
+                <option value="studentPolice">Student Police</option>
+                <option value="charity">Charity</option>
+                <option value="femaleClub">Female Club</option>
+                <option value="information">Information Club</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="region">Region</label>
+              <select id="region" name="region" required>
+                <option value="">-- Select Region --</option>
+                <option value="oromia">Oromia</option>
+                <option value="amhara">Amhara</option>
+                <option value="afar">Afar</option>
+                <option value="somali">Somali</option>
+                <option value="tigray">Tigray</option>
+                <option value="benishangul">Benishangul</option>
+                <option value="gambela">Gambela</option>
+                <option value="central">Central Ethiopia</option>
+                <option value="sidama">Sidama</option>
+                <option value="west">West Ethiopia</option>
+                <option value="walayta">Walayta</option>
+                <option value="other">Other</option>
+                <option value="notSpecified">Not Specified</option>
+              </select>
+            </div>
+            <div class="input-group">
+              <label for="department">Department</label>
+              <select id="department" name="department" required>
+                <option value="">-- Select Department --</option>
+                <option value="cs">Computer Science</option>
+                <option value="software">Software</option>
+                <option value="it">IT</option>
+                <option value="informationScience">Information Science</option>
+                <option value="informationSystem">Information System</option>
+                <option value="ges">GES</option>
+                <option value="statistics">Statistics</option>
+                <option value="accounting">Accounting</option>
+                <option value="management">Management</option>
+                <option value="narm">NARM</option>
+                <option value="education">Education &amp; Behavior</option>
+                <option value="law">Law</option>
+                <option value="publicLeadership">
+                  Public &amp; Leadership
+                </option>
+                <option value="biology">Biology</option>
+              </select>
+            </div>
+          </fieldset>
+
+          <!-- Parent Information -->
+          <fieldset>
+            <legend>Parent Information</legend>
+            <div class="parent-info">
+              <h3>Father Information</h3>
+              <div class="input-group">
+                <label for="fatherFirstName">First Name</label>
+                <input
+                  type="text"
+                  id="fatherFirstName"
+                  name="fatherFirstName"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherMiddleName">Middle Name</label>
+                <input
+                  type="text"
+                  id="fatherMiddleName"
+                  name="fatherMiddleName"
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherLastName">Last Name</label>
+                <input
+                  type="text"
+                  id="fatherLastName"
+                  name="fatherLastName"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherBirthDate">Birth Date</label>
+                <input
+                  type="date"
+                  id="fatherBirthDate"
+                  name="fatherBirthDate"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherAddress">Address</label>
+                <input
+                  type="text"
+                  id="fatherAddress"
+                  name="fatherAddress"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherPhone">Phone</label>
+                <input
+                  type="tel"
+                  id="fatherPhone"
+                  name="fatherPhone"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="fatherPhoto">Upload Photo</label>
+                <input
+                  type="file"
+                  id="fatherPhoto"
+                  name="fatherPhoto"
+                  accept="image/*"
+                  onchange="previewImage(event, 'fatherPreview')"
+                />
+                <img
+                  id="fatherPreview"
+                  src=""
+                  alt="Father Photo Preview"
+                  style="max-width: 100px; margin-top: 10px"
+                />
+              </div>
+            </div>
+            <div class="parent-info">
+              <h3>Mother Information</h3>
+              <div class="input-group">
+                <label for="motherFirstName">First Name</label>
+                <input
+                  type="text"
+                  id="motherFirstName"
+                  name="motherFirstName"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherMiddleName">Middle Name</label>
+                <input
+                  type="text"
+                  id="motherMiddleName"
+                  name="motherMiddleName"
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherLastName">Last Name</label>
+                <input
+                  type="text"
+                  id="motherLastName"
+                  name="motherLastName"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherBirthDate">Birth Date</label>
+                <input
+                  type="date"
+                  id="motherBirthDate"
+                  name="motherBirthDate"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherAddress">Address</label>
+                <input
+                  type="text"
+                  id="motherAddress"
+                  name="motherAddress"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherPhone">Phone</label>
+                <input
+                  type="tel"
+                  id="motherPhone"
+                  name="motherPhone"
+                  required
+                />
+              </div>
+              <div class="input-group">
+                <label for="motherPhoto">Upload Photo</label>
+                <input
+                  type="file"
+                  id="motherPhoto"
+                  name="motherPhoto"
+                  accept="image/*"
+                  onchange="previewImage(event, 'motherPreview')"
+                />
+                <img
+                  id="motherPreview"
+                  src=""
+                  alt="Mother Photo Preview"
+                  style="max-width: 100px; margin-top: 10px"
+                />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- Submit Section -->
+          <div class="submit-group">
+            <button type="submit">Register</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      // Validate form on submission
+      document
+        .getElementById("registrationForm")
+        .addEventListener("submit", function (event) {
+          if (!this.checkValidity()) {
+            event.preventDefault();
+            alert("Please fill out all required fields.");
+          }
+        });
+    </script>
+    <script>
+      // Image preview function
+      function previewImage(event, previewId) {
+        const file = event.target.files[0];
+        if (!file) return;
+        const reader = new FileReader();
+        reader.onload = function () {
+          document.getElementById(previewId).src = reader.result;
+        };
+        reader.readAsDataURL(file);
+      }
+    </script>
+  </body>
+</html>
